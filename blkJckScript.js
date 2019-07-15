@@ -8,39 +8,19 @@ let values = ['Ace', 'King', 'Queen', 'Jack', 'Ten', 'Nine',
 
 let deck = new Deck();
 
-/*
-function Deck() {
-        let deck = [];
-        for (let suitIdx = 0; suitIdx < suits.length; suitIdx++) {
-                for (let valueIdx = 0; valueIdx < values.length; valueIdx++){
-                        let card = {
-                                suit: suits[suitIdx],
-                                value: values[valueIdx]
-                        };
-                        deck.push(card);
-                }
-        }
-        //console.log(deck.length);
-        return deck;
-};
-
-*/
-
 function Deck(){
         let deck = [];
-        suits.forEach(suitId =>
-                values.forEach(valueId =>
-                        deck.push(new Card(suitId, valueId))
-                        //deck.push(card))
+        suits.forEach(suit =>
+                values.forEach(value =>
+                        deck.push(new Card(suit, value))
                 ));
-        console.log(deck.length);
         return deck;
 }
 
-function Card(suitId, valueId){
+function Card(suit, value){
         let card = {
-                suit: suitId,
-                value: valueId
+                suit: suit,
+                value: value
         }
         return card;
 }

@@ -134,3 +134,24 @@ for (var i=0; i < deck.length; i++) {
     //console.log("You are dealt: ");
    // console.log("   " + getCardString(playerCards[0]));
    // console.log("   " + getCardString(playerCards[1]));
+
+   /*
+
+//uses for loops to iterate through the values and suits to create cards. Replaced it 
+with forEach methods.
+function Deck() {
+        let deck = [];
+        for (let suitIdx = 0; suitIdx < suits.length; suitIdx++) {
+                for (let valueIdx = 0; valueIdx < values.length; valueIdx++){
+                        let card = {
+                                suit: suits[suitIdx],
+                                value: values[valueIdx]
+                        };
+                        deck.push(card);
+                }
+        }
+        //console.log(deck.length);
+        return deck;
+};
+
+*/
