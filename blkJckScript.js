@@ -8,6 +8,7 @@ let values = ['Ace', 'King', 'Queen', 'Jack', 'Ten', 'Nine',
 
 let deck = new Deck();
 
+/*
 function Deck() {
         let deck = [];
         for (let suitIdx = 0; suitIdx < suits.length; suitIdx++) {
@@ -23,6 +24,26 @@ function Deck() {
         return deck;
 };
 
+*/
+
+function Deck(){
+        let deck = [];
+        suits.forEach(suitId =>
+                values.forEach(valueId =>
+                        deck.push(new Card(suitId, valueId))
+                        //deck.push(card))
+                ));
+        console.log(deck.length);
+        return deck;
+}
+
+function Card(suitId, valueId){
+        let card = {
+                suit: suitId,
+                value: valueId
+        }
+        return card;
+}
 //DOM Variables
 let textArea = document.getElementById('textArea');
 
