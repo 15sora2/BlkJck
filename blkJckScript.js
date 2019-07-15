@@ -4,6 +4,7 @@ let values = ['Ace', 'King', 'Queen', 'Jack', 'Ten', 'Nine',
                 'Eight', 'Seven', 'Six', 'Five', 'Four', 'Three',
                 'Two', 'One'];
 
+                
 //DOM Variables
 let textArea = document.getElementById('textArea');
 
