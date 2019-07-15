@@ -1,0 +1,136 @@
+//let productName = "Hammer";
+//String Variable
+
+//let productId = "H123";
+
+/*
+let productName = "John's Hammer",
+    productId = "H123";
+
+    let price1 = 5.00
+        price2 = 3.00;
+console.log(productName, productId, price1 + price2);
+*/
+
+/*
+BlackJack Application
+Shamund Gordon
+*/
+
+//cards.push(1234); //adds value to the end
+//cards.pop(); removes last value
+//cards.shift(); removes 1st value, shifts contents down
+//cards.splice(0,3); removes items in indicies 0-3
+//cards.splice(0, 3, 12, 54); same as above, the adds values into newly vacent indicies
+//console.log(cards);
+
+/*let state = 'WI';
+switch(state) {
+        case 'NY':
+                console.log('New York');
+                break; //w.o breaks, code will "fall through", executing the console.logs that follow
+        case 'TX':
+                console.log('Texas');
+                break;
+        default:
+                console.log('Unknown');
+                break;
+        }*/
+
+/*
+let value = 99;
+console.log( typeof(value));
+        Prints the type of the variable
+*/
+
+//let playerCards = [ deck[0], deck[2]];
+
+***Functions***
+function showMessage(message) {
+    console.log(message);
+} --Creates function
+
+showMessage('first'); -- calls and executes function
+
+function triplePlus(value){
+    let newValue = value + value + value;
+    return newValue
+}
+console.log(triplePlus(3));
+
+****Objects****
+let person = {
+        name: "John"
+        age: 32,
+        partTime: false
+};
+--> Objects are filled with "properties"
+
+console.log(person.name); // John
+console.log(person.age); // 32
+
+let cards = [
+        {
+        suit: "Hearts",
+        value: "Queen"
+        },
+
+        {
+        suit: "Clubs",
+        value: "King"
+        }
+];
+--> Array of Objects
+
+function changeCard(card) {
+        card.suit = "Clubs";
+}
+--> Functions can change the properties of an object
+//changeCard(card);
+//console.log(card.suit);
+
+****Create Web Page/DOM (Document Object Model) w/ JS****
+let paragraph = document.getElementById('paragraph');
+paragraph.innerText = "Hello World";
+--> Changes contents of element of the given id w/ given input
+
+****Buttons****
+let okButton = document.getElementById('');
+okButton.addEventListiner('click', function(){
+        //optional code here
+})
+
+****Removing and adding elements****
+let paragraph = document.getElementById('text-area');
+paragraph.style.display = 'none'; //remove it
+paragraph.style.display = 'block'; //add it back
+--> .style gives us access to the css properties of the element
+
+/*
+okButton.addEventListener('click', function(){
+        //textArea.innerText = 'So far so good!';
+        //textArea.style.display = 'block';
+        console.log('Button Worked!');
+});
+*/
+
+//console.log(playerCards);
+/*
+for(let i = 0; i < deck.length; i++){
+        console.log(deck[i]);
+}
+*/
+
+for (var i=0; i < deck.length; i++) {
+        textArea.innerText += '\n' + getCardString(deck[i]);
+        }
+
+        //let deck = createDeck();
+
+//let playerCards = [getNextCard(), getNextCard()];
+
+    //console.log("Welcome to Blackjack!");
+
+    //console.log("You are dealt: ");
+   // console.log("   " + getCardString(playerCards[0]));
+   // console.log("   " + getCardString(playerCards[1]));
