@@ -12,7 +12,7 @@ function Deck(){
                 values.forEach(value =>
                         deck.push(new Card(suit, value))
                 ));
-        //console.log(typeof(deck[3])); object
+
         return deck;
 }
 
@@ -80,45 +80,17 @@ let shuffleDeck = (deck) => {
         }
 }
 
-
-function getCardNumericValue(card){
-        switch(card.value){
-                case 'Ace':
-                        return 1;
-                case 'Two':
-                        return 2;
-                case 'Three':
-                        return 3;
-                case 'Four':
-                        return 4;
-                case 'Five':
-                        return 5;
-                case 'Six':
-                        return 6;
-                case 'Seven':
-                        return 7;
-                case 'Eight':
-                        return 8;
-                case 'Nine':
-                        return 9;
-                default:
-                        return 10;
-        }
-}
-
 function getScore(cardArray){
         let score = 0;
         let hasAce = false;
-        for(let i = 0; i < cardArray.length; i++){
-                let card = cardArray[i];
-                score += getCardNumericValue(card);
+        cardArray.forEach(card =>{
+                score += card.getCardNumericValue();
                 if (card.value === 'Ace'){
                         hasAce = true;
                 }
-        }
-        if (hasAce && score + 10 <= 21){
-                return score + 10;
-        }
+        });
+
+        score = hasAce && score + 10 <= 21 ? (score + 10):score;
         return score;
 }
 
@@ -166,13 +138,13 @@ function showStatus(){
         }
 
         let dealerCardString = ' ';
-        for (let i = 0; i < dealerCards.length; i++){
-                dealerCardString += dealerCards[i].getCardString(dealerCards[i]) + '\n';
-        }
+        dealerCards.forEach(dealerCard => {
+                dealerCardString += dealerCard.getCardString() + '\n';
+        });
         let playerCardString = ' ';
-        for (let i = 0; i < playerCards.length; i++){
-                playerCardString += playerCards[i].getCardString(playerCards[i]) + '\n';
-        }
+        playerCards.forEach(playerCard => {
+                playerCardString += playerCard.getCardString() + '\n';
+        });
         updateScores();
 
         textArea.innerText =
