@@ -165,3 +165,7 @@ function Card(suit, value){
         return card;
 }
 */
+
+function getCardString(card){
+        return `${card.value} of ${card.suit}`;
+}

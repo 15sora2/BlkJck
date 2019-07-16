@@ -3,4 +3,7 @@ export class Card{
             this.suit = suit;
             this.value = value;
     }
+    getCardString(card){
+        return `${card.suit} of ${this.value}`;
+    }
 }

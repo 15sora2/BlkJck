@@ -6,16 +6,17 @@ let values = ['Ace', 'King', 'Queen', 'Jack', 'Ten', 'Nine',
                 'Eight', 'Seven', 'Six', 'Five', 'Four', 'Three',
                 'Two', 'One'];
 
-let deck = new Deck();
-
 function Deck(){
         let deck = [];
         suits.forEach(suit =>
                 values.forEach(value =>
                         deck.push(new Card(suit, value))
                 ));
+        //console.log(typeof(deck[3])); object
         return deck;
 }
+
+let deck = new Deck();
 
 //DOM Variables
 let textArea = document.getElementById('textArea');
@@ -79,9 +80,6 @@ let shuffleDeck = (deck) => {
         }
 }
 
-function getCardString(card){
-        return card.value + ' of ' + card.suit;
-}
 
 function getCardNumericValue(card){
         switch(card.value){
@@ -169,11 +167,11 @@ function showStatus(){
 
         let dealerCardString = ' ';
         for (let i = 0; i < dealerCards.length; i++){
-                dealerCardString += getCardString(dealerCards[i]) + '\n';
+                dealerCardString += dealerCards[i].getCardString(dealerCards[i]) + '\n';
         }
         let playerCardString = ' ';
         for (let i = 0; i < playerCards.length; i++){
-                playerCardString += getCardString(playerCards[i]) + '\n';
+                playerCardString += playerCards[i].getCardString(playerCards[i]) + '\n';
         }
         updateScores();
 
