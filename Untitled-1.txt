@@ -155,3 +155,13 @@ function Deck() {
 };
 
 */
+
+/*
+function Card(suit, value){
+        let card = {
+                suit: suit,
+                value: value
+        }
+        return card;
+}
+*/

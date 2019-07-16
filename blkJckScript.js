@@ -1,4 +1,4 @@
-
+import {Card} from "./card.js";
 
 let suits = ['Hearts', 'Clubs', 'Diamonds', 'Spades'];
 
@@ -17,13 +17,6 @@ function Deck(){
         return deck;
 }
 
-function Card(suit, value){
-        let card = {
-                suit: suit,
-                value: value
-        }
-        return card;
-}
 //DOM Variables
 let textArea = document.getElementById('textArea');
 
