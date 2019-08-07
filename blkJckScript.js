@@ -26,16 +26,12 @@ let newGameButton = document.getElementById('newGameButton'),
  stayButton = document.getElementById('stayButton');
 
 // Game Variables
-let gameStarted = false,
- gameOver = false, 
- playerWon = false;
+let gameStarted = false, gameOver = false, 
+playerWon = false;
 
-let dealerCards = [], 
- playerCards = [];
+let dealerCards = [], playerCards = [];
 
-let dealerScore = 0, 
- playerScore = 0;
-
+let dealerScore = 0, playerScore = 0;
 
 hitButton.style.display = 'none';
 stayButton.style.display = 'none';
@@ -47,9 +43,7 @@ newGameButton.addEventListener('click', function() {
         playerWon = false;
 
         deck = new Deck();
-        //console.log(deck.length);
         shuffleDeck(deck);
-        //console.log(deck.length);
         dealerCards = [getNextCard(), getNextCard()];
         playerCards = [getNextCard(), getNextCard()];
 
