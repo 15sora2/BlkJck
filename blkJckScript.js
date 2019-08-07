@@ -1,10 +1,23 @@
+import {Card} from "./card.js";
+
 let suits = ['Hearts', 'Clubs', 'Diamonds', 'Spades'];
 
 let values = ['Ace', 'King', 'Queen', 'Jack', 'Ten', 'Nine',
                 'Eight', 'Seven', 'Six', 'Five', 'Four', 'Three',
                 'Two', 'One'];
 
-                
+function Deck(){
+        let deck = [];
+        suits.forEach(suit =>
+                values.forEach(value =>
+                        deck.push(new Card(suit, value))
+                ));
+
+        return deck;
+}
+
+let deck = new Deck();
+
 //DOM Variables
 let textArea = document.getElementById('textArea');
 
@@ -13,17 +26,12 @@ let newGameButton = document.getElementById('newGameButton'),
  stayButton = document.getElementById('stayButton');
 
 // Game Variables
-let gameStarted = false,
- gameOver = false, 
- playerWon = false;
+let gameStarted = false, gameOver = false, 
+playerWon = false;
 
-let dealerCards = [], 
- playerCards = [],
- deck = [];
+let dealerCards = [], playerCards = [];
 
-let dealerScore = 0, 
- playerScore = 0;
-
+let dealerScore = 0, playerScore = 0;
 
 hitButton.style.display = 'none';
 stayButton.style.display = 'none';
@@ -34,10 +42,8 @@ newGameButton.addEventListener('click', function() {
         gameOver = false;
         playerWon = false;
 
-        deck = createDeck();
-        //console.log(deck.length);
+        deck = new Deck();
         shuffleDeck(deck);
-        //console.log(deck.length);
         dealerCards = [getNextCard(), getNextCard()];
         playerCards = [getNextCard(), getNextCard()];
 
@@ -59,21 +65,6 @@ stayButton.addEventListener('click', function(){
         showStatus();
 });
 
-function createDeck() {
-        let deck = [];
-        for (let suitIdx = 0; suitIdx < suits.length; suitIdx++) {
-                for (let valueIdx = 0; valueIdx < values.length; valueIdx++){
-                        let card = {
-                                suit: suits[suitIdx],
-                                value: values[valueIdx]
-                        };
-                        deck.push(card);
-                }
-        }
-        //console.log(deck.length);
-        return deck;
-}
-
 let shuffleDeck = (deck) => {
         for (let i = 0; i < deck.length; i++){
                 let swapIdx = Math.trunc(Math.random() * deck.length);
@@ -83,48 +74,17 @@ let shuffleDeck = (deck) => {
         }
 }
 
-function getCardString(card){
-        return card.value + ' of ' + card.suit;
-}
-
-function getCardNumericValue(card){
-        switch(card.value){
-                case 'Ace':
-                        return 1;
-                case 'Two':
-                        return 2;
-                case 'Three':
-                        return 3;
-                case 'Four':
-                        return 4;
-                case 'Five':
-                        return 5;
-                case 'Six':
-                        return 6;
-                case 'Seven':
-                        return 7;
-                case 'Eight':
-                        return 8;
-                case 'Nine':
-                        return 9;
-                default:
-                        return 10;
-        }
-}
-
 function getScore(cardArray){
         let score = 0;
         let hasAce = false;
-        for(let i = 0; i < cardArray.length; i++){
-                let card = cardArray[i];
-                score += getCardNumericValue(card);
+        cardArray.forEach(card =>{
+                score += card.getCardNumericValue();
                 if (card.value === 'Ace'){
                         hasAce = true;
                 }
-        }
-        if (hasAce && score + 10 <= 21){
-                return score + 10;
-        }
+        });
+
+        score = hasAce && score + 10 <= 21 ? (score + 10):score;
         return score;
 }
 
@@ -172,13 +132,13 @@ function showStatus(){
         }
 
         let dealerCardString = ' ';
-        for (let i = 0; i < dealerCards.length; i++){
-                dealerCardString += getCardString(dealerCards[i]) + '\n';
-        }
+        dealerCards.forEach(dealerCard => {
+                dealerCardString += dealerCard.getCardString() + '\n';
+        });
         let playerCardString = ' ';
-        for (let i = 0; i < playerCards.length; i++){
-                playerCardString += getCardString(playerCards[i]) + '\n';
-        }
+        playerCards.forEach(playerCard => {
+                playerCardString += playerCard.getCardString() + '\n';
+        });
         updateScores();
 
         textArea.innerText =
