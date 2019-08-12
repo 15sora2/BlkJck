@@ -1,7 +1,9 @@
 body{
     background-image: url(images/cardbkgrnd.png); /* Use backslash(/), not (\). */
+    background-repeat: no-repeat;
+    background-size: contain;
     background-color: blanchedalmond;
-    
+    color: white;
 }
 
 #textArea {
