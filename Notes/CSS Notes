@@ -1,3 +1,50 @@
 <link rel="stylesheet" href="style.css">
     -->rel: specifies the relationship between this
         html/browser and the link
+
+***CSS Levels***
+***Rules***
+body{
+    background-color:#ccc99;
+}
+-->body: Selector
+-->background-color:#ccc99: propertyname:value;
+    -->Uses property name, not Id
+
+***Simple Selectors***
+-->body: simple selector
+-->A selector is a pattern used to apply styles to elements
+-->#id: selector finds the element with the given Id
+-->.bookTitle: selectot that finds the element of the given class
+-->use classes to apply style to multiple elements.
+--> use id's to apply style to individual elements
+
+***Other Selectors***
+-->Descendant selector
+div p{
+    //...
+}
+    -->The style will be applied to any <p> withing the <div>
+
+-->Child Selector
+div > p{
+    //...
+}
+    -->Looks for the <p> that is directly under the <div>
+
+-->Attribute selector
+img[alt=spacer]{
+    padding:0px;
+}
+    -->Applies the style to any image with the alt=spacer
+
+-->Psuedo class
+    a:visited{color:...}
+        -->Applies the style to <a> if the link has been visited
+        -->Styles based on conditions of the inherited class (which is written first in this case, the <a>)
+
+-->/*...*/: CSS commenting
+
+****Specifying Property Values***
+-->Screen measurements: pixels(px)
+-->Physical measurements: inches(in), points(pt)
