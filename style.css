@@ -1,5 +1,7 @@
 body{
-    background-color:blanchedalmond
+    background-image: url(images/cardbkgrnd.png); /* Use backslash(/), not (\). */
+    background-color: blanchedalmond;
+    
 }
 
 #textArea {
