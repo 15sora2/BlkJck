@@ -48,3 +48,45 @@ img[alt=spacer]{
 ****Specifying Property Values***
 -->Screen measurements: pixels(px)
 -->Physical measurements: inches(in), points(pt)
+
+****Cascading & Inheritance****
+***The Cascade***
+--> Order of importance 
+    ->Author stylesheet -> User stylesheet -> Default stylesheet
+-->User Stylesheet: formatting and style provided by the browser
+    -->There are websites that will tell you the browser's default style of
+        elements on the page
+--> Author Stylesheet: Stylesheet created by you, the developer
+--> !important keyword puts forst priority on the given style, ignoreing the level of importance 
+    of the types of CSS
+
+***Ordering Rules***
+-->Can link multiple CSS files in an html
+-->The last style rule wins. That will be the style of the element
+-->Can import styles from one CSS into another
+    -->(At the top of a CSS file)
+            @import url("stylesheetName.css");
+    -->Can override those styles by adding styles into the 
+        current CSS file
+
+****Developer tools and CSS****
+-->Developer tools in the browser can show what's going on
+    with elements in the page
+    -->Can show what style rules were overrided
+
+****CSS Reset****
+-->Compatability view that can be found in Internet Explorer
+    -->Converts the current User Stylesheet to an older version
+-->Can find a CSS Reset file online somewhere
+
+****Specificity****
+-->The more specific the rule is when pointing to an element, the
+    higher the rating (it wins in styling the element)
+-->Specificity applies to rules that are pointing to the same element.
+    If one is changing the font but others arent then the font will be changed
+        with no issue.
+
+****Inheritance****
+
+
+
