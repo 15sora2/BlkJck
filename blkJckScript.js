@@ -19,7 +19,8 @@ function Deck(){
 let deck = new Deck();
 
 //DOM Variables
-let textArea = document.getElementById('textArea');
+let textArea = document.getElementById('textArea'),
+ winnerDisplay = document.getElementById('winnerDisplay');
 
 let newGameButton = document.getElementById('newGameButton'),
  hitButton = document.getElementById('hitButton'),
@@ -35,6 +36,7 @@ let dealerScore = 0, playerScore = 0;
 
 hitButton.style.display = 'none';
 stayButton.style.display = 'none';
+//winnerDisplay.style.display = 'none'; since this display begins as empty, there's no need to not display it
 showStatus();
 
 newGameButton.addEventListener('click', function() {
@@ -50,6 +52,7 @@ newGameButton.addEventListener('click', function() {
         newGameButton.style.display = 'none';
         hitButton.style.display = 'inline';
         stayButton.style.display = 'inline';
+        winnerDisplay.innerText = "";
         showStatus();
 });
 
@@ -152,11 +155,10 @@ function showStatus(){
 
         if (gameOver) {
                 if (playerWon) {
-                        textArea.innerText += "You Won!";
-                        alert("Winner!");
+                        winnerDisplay.innerText += "You Won!";
                 }
                 else {
-                        textArea.innerText += "Dealer Won!";
+                        winnerDisplay.innerText += "Dealer Won!";
                 }
 
                 newGameButton.style.display = 'inline';

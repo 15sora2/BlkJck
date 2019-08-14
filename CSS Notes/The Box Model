@@ -1,0 +1,41 @@
+-->Each element produces a "box"
+
+****The Big Three: Border, Margin, Padding****
+-->Border
+    -->The surrounding edge of the element's box
+    -->Can set its width, style, color
+    -->Invisible by default
+-->Padding
+    -->Space between the border and it's contents
+-->Margin
+    -->Distance from other elements
+
+****Top, Right, Bottom, Left****
+-->Every box has 4 sides
+-->Can interact with each side individually
+    -->padding-left: 5px
+    -->border-bottom: 3px solid black
+        -->Setting the width, the color, and visibility of the border all in one line
+-->Can interact with each side at the same time
+    -->margin: 0 3px 0 3px
+        -->Interacts with the box starting from top, right, bottom, left (clockwise)
+
+****Vertical Margins Collapse****
+-->Top and bottom margins of elements will overlap when right next to one another
+
+****Width****
+-->By deafult, the width of a box will extend all the way to the right of the window
+-->width changes the with of the box
+-->text-align:center
+    -->Centers the content in the width of the box
+
+****Display and Visibility****
+-->Inline elements move down when there is not enough space
+-->Hidden elements will not show up but will reserve it's space
+    -->display: none //element and it's space will not show up
+    -->visibility: none //element will not show up but it's space is reserved
+-->display settings can adjust the behavior of element placement on the page
+
+****Styling a menu****
+-->text-decoration:none
+    -->Will remove link underline
