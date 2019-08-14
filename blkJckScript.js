@@ -153,6 +153,7 @@ function showStatus(){
         if (gameOver) {
                 if (playerWon) {
                         textArea.innerText += "You Won!";
+                        alert("Winner!");
                 }
                 else {
                         textArea.innerText += "Dealer Won!";

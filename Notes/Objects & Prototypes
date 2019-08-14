@@ -1,0 +1,32 @@
+****Object Literals to Create JS Objects****
+'use strict';
+//Makes JS throw errors in places where errors 
+  //usually be silent
+
+-->Object Literal
+    var cat = {name: 'Fluffy',
+               color: 'White'} 
+    System.log(cat.name) //Fluffy
+-->Most common way to make an object
+
+****The Dynamic Nature of JS****
+-->If you want to create an object w/o the class-type behavior,
+    simply create it using the Object Literal technique (as shown above)
+-->Can change properties of the created object
+    -->cat.age = 3;
+-->Functions can be added later, if desired
+    cat.speak = function() {display("Meeeooow")}
+    cat.speak(); //Meeeooow
+
+****Using Constructor Functions to Create Javascript Objects****
+-->keyword "this"
+    -->"This" is pointing to the object that is executing the code
+-->Creating an object w/o the "new" keyword will have "this" point
+    at the browser window instead of the desired object
+
+****Using Objects.create() to create JS Objects****
+-->Probably don't use this method if you don't have to.
+-->Gives a good look at what happens behind the scenes when creating objects
+
+****Using ECMAScript6 to create JS Objects****
+-->The same structure as creating an Object class in JS
