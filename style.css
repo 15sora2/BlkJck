@@ -1,3 +1,7 @@
+*{
+    text-align: center;
+}
+
 body{
     /* background-image: url(images/cardbkgrnd.png); /* Use backslash(/), not (\). 
     background-repeat: no-repeat;
@@ -11,5 +15,10 @@ body{
 }
 
 #textArea {
-    font-size: larger
+    font-size: larger;
 }
+
+
+/* #title{
+    text-align: center;
+} */
