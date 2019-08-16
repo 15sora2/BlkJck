@@ -3,6 +3,7 @@ export class Card{
             this.suit = suit;
             this.value = value;
     }
+    
     getCardString(){
         return `${this.suit} of ${this.value}`;
     }

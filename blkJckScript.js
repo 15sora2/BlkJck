@@ -1,20 +1,4 @@
-import {Card} from "./card.js";
-
-let suits = ['Hearts', 'Clubs', 'Diamonds', 'Spades'];
-
-let values = ['Ace', 'King', 'Queen', 'Jack', 'Ten', 'Nine',
-                'Eight', 'Seven', 'Six', 'Five', 'Four', 'Three',
-                'Two', 'One'];
-
-function Deck(){
-        let deck = [];
-        suits.forEach(suit =>
-                values.forEach(value =>
-                        deck.push(new Card(suit, value))
-                ));
-
-        return deck;
-}
+import {Deck} from "./Deck.js";
 
 let deck = new Deck();
 
@@ -45,9 +29,9 @@ newGameButton.addEventListener('click', function() {
         playerWon = false;
 
         deck = new Deck();
-        shuffleDeck(deck);
-        dealerCards = [getNextCard(), getNextCard()];
-        playerCards = [getNextCard(), getNextCard()];
+        deck.shuffleDeck();
+        dealerCards = [deck.getNextCardFromDeck(), deck.getNextCardFromDeck()];
+        playerCards = [deck.getNextCardFromDeck(), deck.getNextCardFromDeck()];
 
         newGameButton.style.display = 'none';
         hitButton.style.display = 'inline';
@@ -57,7 +41,7 @@ newGameButton.addEventListener('click', function() {
 });
 
 hitButton.addEventListener('click', function() {
-        playerCards.push(getNextCard());
+        playerCards.push(deck.getNextCardFromDeck());
         checkForEndOfGame();
         showStatus();
 });
@@ -67,15 +51,6 @@ stayButton.addEventListener('click', function(){
         checkForEndOfGame();
         showStatus();
 });
-
-let shuffleDeck = (deck) => {
-        for (let i = 0; i < deck.length; i++){
-                let swapIdx = Math.trunc(Math.random() * deck.length);
-                let tmp = deck[swapIdx];
-                deck[swapIdx] = deck[i];
-                deck[i] = tmp;
-        }
-}
 
 function getScore(cardArray){
         let score = 0;
@@ -104,7 +79,7 @@ function checkForEndOfGame(){
                 while (dealerScore < playerScore //dealer is losing
                         && playerScore <=21
                         && dealerScore <= 21){
-                                dealerCards.push(getNextCard());
+                                dealerCards.push(deck.getNextCardFromDeck());
                                 updateScores();
                         }
         }
@@ -165,8 +140,4 @@ function showStatus(){
                 hitButton.style.display = 'none';
                 stayButton.style.display = 'none';
         }
-}
-
-let getNextCard = () => {
-        return deck.shift();
 }
