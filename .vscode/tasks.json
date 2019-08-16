@@ -4,5 +4,10 @@
     "windows": {
         "command": "explorer.exe"
     },
-    "args": ["blkJck.html"]
+    "args": [
+        "blkJck.html"
+    ],
+    "problemMatchers": [
+        "$tsc-watch"
+    ]
 }

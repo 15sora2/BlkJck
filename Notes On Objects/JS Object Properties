@@ -1,0 +1,13 @@
+****Using Bracket Notation To Access Javascript Properties****
+display(cat['color']) does the same as display(cat.color)
+
+****Using JavaScript Property Descriptors****
+Object.getOwnPropertyDescriptor(object, 'object property')
+
+****Using The Writable Attribute****
+
+****Using the Enumerable Attribute***
+-->By default, properties in an object are Enumerable
+    -->This means you can loop through them
+
+****Using Getters and setters****
