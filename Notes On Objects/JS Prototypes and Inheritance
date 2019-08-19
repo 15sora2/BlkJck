@@ -1,0 +1,22 @@
+****Getting started w/ JS prototypes****
+    var arr = ['red', 'blue', 'green']
+    var last = arr[arr.length-1];
+    var last = arr[arr.length-1];
+    display(last)
+
+***What is a prototype?***
+-->A function that exists on every object in JS
+-->A prototype is an object, not a class
+-->functions and objects have prototypes
+
+var fluffy = new Cat('fluffy', 'white');
+Cat.prototype.age = 3;
+display(Cat.prototype) //prototype of an object instance
+display(fluffy._proto_)
+    -->These two point to the same instance of Cat
+
+-->A function's prototype:
+    -->The object instance that will become the prototype for all objects created
+        using this function as a constructor
+-->An object's prototype:
+    --> An object's prototype is the object instance from which the object is inherited
