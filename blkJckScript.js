@@ -93,13 +93,7 @@ function checkForEndOfGame(){
                 gameOver = true;
         }
         else if(gameOver){
-
-                if (playerScore > dealerScore) {
-                        playerWon = true;
-                }
-                else {
-                        playerWon = false;
-                }
+                (playerScore > dealerScore) ? playerWon=true : playerWon=false;
         }
 }
 
@@ -129,12 +123,8 @@ function showStatus(){
         '(score:' + playerScore + ')\n\n';
 
         if (gameOver) {
-                if (playerWon) {
-                        winnerDisplay.innerText += "You Won!";
-                }
-                else {
-                        winnerDisplay.innerText += "Dealer Won!";
-                }
+
+                playerWon ? winnerDisplay.innerText += "You Won!" : winnerDisplay.innerText += "Dealer Won!";
 
                 newGameButton.style.display = 'inline';
                 hitButton.style.display = 'none';
