@@ -3,12 +3,6 @@
 }
 
 body{
-    /* background-image: url(images/cardbkgrnd.png); /* Use backslash(/), not (\). 
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-color: blanchedalmond;
-    color: white; */
-
     background: rgb(0,0,3);
     background: linear-gradient(90deg, rgba(0,0,3,1) 28%, rgba(121,9,9,1) 77%, rgba(244,244,244,1) 100%);
     color: white;
@@ -19,6 +13,7 @@ body{
 }
 
 
-/* #title{
-    text-align: center;
-} */
+#winnerDisplay{
+    font-style: italic;
+    font-weight: bold;
+}
