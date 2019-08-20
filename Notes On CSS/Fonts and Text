@@ -1,0 +1,23 @@
+****Font Collections****
+
+
+****Using font-family****
+-->Common to see sans-serif
+
+****Font Selection****
+body{
+    font-family:Ariel, Helvetica, sans-serif;
+}
+    -->If the first choice isn't available on a particular browser, 
+        it will go down the list until it finds one that is
+
+****Font Styling***
+
+
+****Text Properties****
+-->We can change many aspects about the way a text element looks
+-text-indent
+-letter-spacing
+-word-spacing
+-text-decoration
+-etc.
