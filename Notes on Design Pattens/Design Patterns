@@ -1,0 +1,40 @@
+****The Problem****
+-->JS initally waws mainly written to manage the DOM
+
+****Design Patterns to the rescue****
+-->Design Patterns
+
+****Physical Design Patterns****
+The problem: Exitiing and entering a build (entryway traffic)
+    The solution: revolving doors
+
+****The Gang of Four****
+
+****So What Is a Design Pattern Anyway?****
+-->What Constitutes a Pattern?
+    -->It solves a problem
+    -->it is a proven concept
+    -->The solution is not obvious
+    -->It describes a relationship
+    -->It has a significant human component
+-->Why bother with patterns?
+    -->Why solve it again when someone else has solved this problem for us?
+    -->Common Vocabulary
+
+****The Types of Patterns****
+-->Creational
+    -->Patterns that deal w/ the creation of new instances of an object
+        1) Constructor
+        2) Module
+        3) Factory
+        4) Singleton
+Structural
+    -->Deal w/ the makeup of the actual objects themselves
+        1) Decorator
+        2) Facade
+        3) Flyweight
+-->Behavioral
+    -->Deal w/ how objects relate with eachother annd how they operate
+        1) Command
+        2) Mediator
+        3) Observer
